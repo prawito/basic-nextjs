@@ -6,6 +6,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     max-width: 1400px;
     margin: auto;
+    height: 100%;
 }
 
 a {
@@ -17,6 +18,7 @@ a {
   box-sizing: border-box;
 }
 
-.title {
-  color: red;
+#__next {
+  height: 100%;
 }
+
