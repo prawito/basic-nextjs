@@ -1,4 +1,6 @@
+import { useRouter } from 'next/router';
 import Layout from '../../components/Layout';
+import styles from '../../styles/Users.module.css';
 
 interface UsersProps {
   dataUsers: Array<any>;
@@ -6,15 +8,16 @@ interface UsersProps {
 
 export default function Users(props: UsersProps) {
   const { dataUsers } = props;
+  const router = useRouter();
 
   console.log(dataUsers);
   return (
     <Layout pageTitle="Users Page">
       {dataUsers.map((user) => (
-        <>
+        <div key={user.id} onClick={() => router.push(`/users/${user.id}`)} className={styles.card}>
           <p>{user.name}</p>
           <p>{user.email}</p>
-        </>
+        </div>
       ))}
     </Layout>
   );
